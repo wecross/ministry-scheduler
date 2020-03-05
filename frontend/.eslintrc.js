@@ -19,5 +19,8 @@ module.exports = {
     sourceType: "module",
   },
   plugins: ["react", "@typescript-eslint"],
-  rules: {},
+  rules: {
+    quotes: ["error", "double"],
+    indent: ["error", 4],
+  },
 };
