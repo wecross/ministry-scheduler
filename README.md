@@ -2,6 +2,10 @@
 
 Contains [frontend](./frontend) and [backend](./backend) folders
 
+## How to Contribute 🤝
+
+Check out our [__Contributing Guide__](./contributing.md).
+
 ## Frontend
 
 ### Installation
