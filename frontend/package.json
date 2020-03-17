@@ -9,7 +9,7 @@
     "build": "next build && npm export",
     "start": "next start",
     "lint": "eslint --fix --ext .js,.jsx,.ts,.tsx,.json,.scss,.css,.md src",
-    "format": "prettier --write src/**/*.{js,jsx,ts,tsx,json,scss,css,md}"
+    "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,json,scss,css,md}'"
   },
   "author": "WECROSS IT",
   "dependencies": {
