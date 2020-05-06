@@ -7,29 +7,38 @@
   "scripts": {
     "dev": "next",
     "build": "next build && npm export",
-    "start": "next start",
+    "start": "npm run db-generate && next start",
     "lint": "eslint --fix --ext .js,.jsx,.ts,.tsx,.json,.scss,.css,.md src",
-    "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,json,scss,css,md}'"
+    "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,json,scss,css,md}'",
+    "db-generate": "prisma generate",
+    "db-gen-migration": "prisma migrate save --experimental",
+    "db-migrate-up": "prisma migrate up --experimental",
+    "db-reset": " npx ts-node --skip-project db-reset.ts",
+    "db-init": "npm run db-migrate && npx ts-node --skip-project db-initial-setup.ts",
+    "db-migrate": "npm run db-gen-migration && npm run db-migrate-up && npm run db-generate",
+    "check-db": "npm run db-generate && npx ts-node --skip-project check-db.ts"
   },
   "author": "WECROSS IT",
   "dependencies": {
-    "next": "^9.3.0",
+    "@prisma/client": "^2.0.0-beta.4",
+    "next": "9.3.4",
     "react": "^16.13.0",
     "react-dom": "^16.13.0"
   },
   "devDependencies": {
+    "@prisma/cli": "^2.0.0-beta.4",
     "@types/node": "^13.7.7",
     "@types/react": "^16.9.23",
-    "typescript": "^3.8.3",
     "@typescript-eslint/eslint-plugin": "^2.22.0",
     "@typescript-eslint/parser": "^2.22.0",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.18.3",
-    "prettier": "^1.19.1",
+    "husky": "^4.2.3",
     "lint-staged": "^10.0.8",
-    "husky": "^4.2.3"
+    "prettier": "^1.19.1",
+    "typescript": "^3.8.3"
   },
   "husky": {
     "hooks": {
