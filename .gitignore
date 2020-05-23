@@ -105,3 +105,7 @@ dist
 
 .next
 out
+/frontend/prisma/client
+/frontend/prisma/client
+/frontend/prisma/dev.db
+/frontend/prisma/initial-data.ts

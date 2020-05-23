@@ -10,11 +10,11 @@ const withApp = (nextConfig = {}) => {
     webpack(config, options) {
       config.resolve.alias["@src"] = path.resolve("./src");
       return config;
-    }
+    },
   });
 };
 module.exports = {
   ...withApp(),
   // enforce .page convention for pages
-  pageExtensions: ["page.tsx", "page.ts", "page.js"]
+  pageExtensions: ["page.tsx", "page.ts", "page.js"],
 };
